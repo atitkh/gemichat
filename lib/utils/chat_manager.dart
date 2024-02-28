@@ -1,4 +1,5 @@
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:uuid/uuid.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
@@ -18,7 +19,7 @@ class ChatManager {
 
     final model = GenerativeModel(
       model: 'gemini-pro',
-      apiKey: 'API_KEY_HERE',
+      apiKey: dotenv.env['API_KEY']!,
     );
 
     try {
